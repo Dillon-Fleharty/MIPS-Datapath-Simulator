@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>shifters</key>
+		<array/>
+		<key>muxes</key>
+		<array/>
+		<key>signExts</key>
+		<array/>
+		<key>MIPSType</key>
+		<string>rFormat</string>
+		<key>pc</key>
+		<dict>
+			<key>outA</key>
+			<dict>
+				<key>obj</key>
+				<string>IM</string>
+				<key>src</key>
+				<string>inA</string>
+			</dict>
+			<key>inA</key>
+			<dict>
+				<key>obj</key>
+				<string>Adder</string>
+				<key>src</key>
+				<string>outA</string>
+			</dict>
+		</dict>
+		<key>adders</key>
+		<array>
+			<dict>
+				<key>outA</key>
+				<dict>
+					<key>obj</key>
+					<string>PC</string>
+					<key>src</key>
+					<string>inA</string>
+				</dict>
+				<key>inA</key>
+				<dict>
+					<key>obj</key>
+					<string>IM</string>
+					<key>src</key>
+					<string>outA</string>
+				</dict>
+				<key>inB</key>
+				<dict>
+					<key>obj</key>
+					<string>IM</string>
+					<key>src</key>
+					<string>outD</string>
+				</dict>
+			</dict>
+		</array>
+		<key>alu</key>
+		<dict>
+			<key>outA</key>
+			<dict>
+				<key>obj</key>
+				<string>Reg File</string>
+				<key>src</key>
+				<string>inD</string>
+			</dict>
+			<key>inB</key>
+			<dict>
+				<key>obj</key>
+				<string>Reg File</string>
+				<key>src</key>
+				<string>outB</string>
+			</dict>
+			<key>inA</key>
+			<dict>
+				<key>src</key>
+				<string>outA</string>
+				<key>obj</key>
+				<string>Reg File</string>
+			</dict>
+		</dict>
+		<key>usage</key>
+		<string>add $dest, $src1, $src2</string>
+		<key>name</key>
+		<string>add</string>
+	</dict>
+</array>
+</plist>
